@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Facturas;
 class FacturasController extends Controller
 {
     /**
@@ -14,6 +14,10 @@ class FacturasController extends Controller
     public function index()
     {
         //
+        $facturas = Facturas::all();
+        return view('facturas.index', [
+            'facturas' => $facturas
+        ]);
     }
 
     /**
@@ -24,6 +28,7 @@ class FacturasController extends Controller
     public function create()
     {
         //
+        return view('facturas.create');
     }
 
     /**
@@ -35,6 +40,9 @@ class FacturasController extends Controller
     public function store(Request $request)
     {
         //
+        Facturas::create($request->all());
+        return redirect()->route('facturas.index');
+
     }
 
     /**
@@ -46,6 +54,10 @@ class FacturasController extends Controller
     public function show($id)
     {
         //
+        $factura = Facturas::find($id);
+        return view('facturas.show', [
+            'factura' => $factura
+        ]);
     }
 
     /**
@@ -57,6 +69,10 @@ class FacturasController extends Controller
     public function edit($id)
     {
         //
+        $factura = Facturas::find($id);
+        return view('facturas.edit', [
+            'factura' => $factura
+        ]);
     }
 
     /**
@@ -69,6 +85,8 @@ class FacturasController extends Controller
     public function update(Request $request, $id)
     {
         //
+        Facturas::find($id)->update($request->all());
+        return redirect()->route('facturas.index');
     }
 
     /**
@@ -80,5 +98,7 @@ class FacturasController extends Controller
     public function destroy($id)
     {
         //
+        Facturas::find($id)->delete();
+        return redirect()->route('facturas.index');
     }
 }
