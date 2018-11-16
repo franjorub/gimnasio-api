@@ -20,9 +20,7 @@ class CreateClientesTable extends Migration
             $table->string('apellido');
             $table->string('direccion');
             $table->string('correo')->unique();
-            $table->string('fecha_nacimiento');
-
-
+            $table->date('fecha_nacimiento');
             $table->timestamps();
         });
     }
