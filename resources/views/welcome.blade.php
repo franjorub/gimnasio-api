@@ -86,6 +86,7 @@
 
                 <div class="links">
                     <a href="/clientes">Clientes</a>
+                    <a href="/contratos">Contratos</a>
                 </div>
             </div>
         </div>
