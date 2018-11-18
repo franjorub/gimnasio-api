@@ -22,9 +22,6 @@ class CreatePagoTable extends Migration
             $table->timestamps();
 
             
-            
-        });
-        Schema::table('pago', function(Blueprint $table) {
             $table->foreign('id_factura')
             ->references('id')->on('factura')
             ->onDelete('cascade');

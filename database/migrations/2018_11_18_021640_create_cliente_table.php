@@ -22,7 +22,6 @@ class CreateClienteTable extends Migration
             $table->string('correo')->nullable();
             $table->string('direccion');
             $table->timestamps();
-            $table->rememberToken();
         });
     }
 
