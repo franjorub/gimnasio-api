@@ -30,7 +30,14 @@
                                         <input class="form-control" type="number" value="{{$id_cliente}}" name="id_cliente">
                                         </div>
                                     </div>
-                                   
+                                    <div class="form-group">
+                                            <label for="exampleFormControlSelect1">Plan de entrenamiento</label>
+                                            <select class="form-control" id="exampleFormControlSelect1" name="id_plan">                                            
+                                              @foreach ($planes as $plan)
+                                                <option value="{{$plan->id}}">{{$plan->nombre}}</option>
+                                              @endforeach
+                                            </select>
+                                          </div>
                                    
                                     <div class="form-group row">
                                         

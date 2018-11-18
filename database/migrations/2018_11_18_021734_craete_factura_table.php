@@ -22,13 +22,13 @@ class CraeteFacturaTable extends Migration
             $table->timestamps();
 
             
-            $table->foreign('id_contrato')
-            ->references('id')->on('contrato')
-            ->onDelete('cascade');
+            // $table->foreign('id_contrato')
+            // ->references('id')->on('contrato')
+            // ->onDelete('cascade');
 
-            $table->foreign('id_usuario')
-            ->references('id')->on('usuario')
-            ->onDelete('cascade');
+            // $table->foreign('id_usuario')
+            // ->references('id')->on('usuario')
+            // ->onDelete('cascade');
         });
     }
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contrato;
+use App\Plan;
 use Illuminate\Support\Facades\DB;
 class ContratoController extends Controller
 {
@@ -17,6 +18,7 @@ class ContratoController extends Controller
         //
         $contratos = DB::select('SELECT contrato.id, cliente.nombre, cliente.apellido, contrato.fecha,
         contrato.monto_inscripcion FROM contrato JOIN cliente ON (contrato.id_cliente=cliente.id)');
+        
         
         return view('contrato.index', [
             'contratos' => $contratos
@@ -33,8 +35,10 @@ class ContratoController extends Controller
         //
         //dd($request);
         $id_cliente = $request->id_cliente;
+        $planes = Plan::all();
         return view('contrato.create', [
-            'id_cliente' => $id_cliente
+            'id_cliente' => $id_cliente,
+            'planes' => $planes
         ]);
     }
 

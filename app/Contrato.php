@@ -8,5 +8,5 @@ class Contrato extends Model
 {
     //
     protected $table = 'contrato';
-    protected $fillable = ['id', 'fecha', 'monto_inscripcion','id_cliente',];
+    protected $fillable = ['id', 'fecha', 'monto_inscripcion','id_cliente', 'id_plan'];
 }
