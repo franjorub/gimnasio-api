@@ -23,8 +23,8 @@
                             <td>{{$contrato->monto_inscripcion}}</td>                            
                             <td>{{$contrato->nombre}} {{$contrato->apellido}}</td>                            
                                                  
-                            <td><a href="/contrato/{{$contrato->id}}/edit"><i class="fas fa-user-edit"></i></a></td>
-                            <td><a href="/contrato/{{$contrato->id}}"><i class="fas fa-eye"></i></a></td>
+                            <td><a href="/contrato/{{$contrato->id}}/edit"><i class="fa fa-pencil"></i></a></td>
+                            <td><a href="/contrato/{{$contrato->id}}"><i class="fa fa-eye"></i></a></td>
                         </tr>
                    @empty
                        <tr>
