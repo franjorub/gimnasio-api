@@ -14,7 +14,7 @@ class ClientesController extends Controller
     public function index()
     {
         //
-        $clientes = Clientes::all();
+        $clientes = cliente::all();
         return view('clientes.index', [
             'clientes' => $clientes
         ]);
@@ -40,7 +40,7 @@ class ClientesController extends Controller
     public function store(Request $request)
     {
         //
-        Clientes::create($request->all());
+        Cliente::create($request->all());
         return redirect()->route('clientes.index');
 
     }
@@ -54,7 +54,7 @@ class ClientesController extends Controller
     public function show($id)
     {
         //
-        $cliente = Clientes::find($id);
+        $cliente = Cliente::find($id);
         return view('clientes.show', [
             'cliente' => $cliente
         ]);
@@ -69,7 +69,7 @@ class ClientesController extends Controller
     public function edit($id)
     {
         //
-        $cliente = Clientes::find($id);
+        $cliente = Cliente::find($id);
         return view('clientes.edit', [
             'cliente' => $cliente
         ]);
@@ -85,7 +85,7 @@ class ClientesController extends Controller
     public function update(Request $request, $id)
     {
         //
-        Clientes::find($id)->update($request->all());
+        Cliente::find($id)->update($request->all());
         return redirect()->route('clientes.index');
     }
 
@@ -98,7 +98,7 @@ class ClientesController extends Controller
     public function destroy($id)
     {
         //
-        Clientes::find($id)->delete();
+        Cliente::find($id)->delete();
         return redirect()->route('clientes.index');
     }
 }

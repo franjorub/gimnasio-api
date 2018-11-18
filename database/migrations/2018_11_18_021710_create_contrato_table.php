@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFacturasTable extends Migration
+class CreateContratoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,17 @@ class CreateFacturasTable extends Migration
      */
     public function up()
     {
-        Schema::create('facturas', function (Blueprint $table) {
+        Schema::create('contrato', function (Blueprint $table) {
             $table->increments('id');
             $table->date('fecha');
+            $table->float('monto_inscripcion',10,2);
+            $table->string('cedula_cliente');
             $table->timestamps();
+
+
+            $table->foreign('cedula_cliente')
+            ->references('cedula')->on('cliente')
+            ->onDelete('cascade');
         });
     }
 
@@ -27,6 +34,6 @@ class CreateFacturasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('facturas');
+        Schema::dropIfExists('contrato');
     }
 }
