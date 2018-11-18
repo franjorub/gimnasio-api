@@ -25,3 +25,4 @@ Route::get('cliente/crear-contrato/{id}', function ($id) {
 
 Route::resource('factura', 'FacturaController');
 Route::resource('contrato', 'ContratoController');
+Route::resource('plan', 'PlanController');

@@ -10,6 +10,7 @@
 				<ul class="nav nav-pills flex-column sidebar-nav">
 					<li class="nav-item"><a class="nav-link active" href="/cliente"><em class="fa fa-users"></em> Clientes <span class="sr-only">(current)</span></a></li>
 					<li class="nav-item"><a class="nav-link" href="/contrato"><em class="fa fa-file-text"></em> Contratos</a></li>
+					<li class="nav-item"><a class="nav-link" href="/plan"><em class="fa fa-file-text"></em> Planes</a></li>
 					
 				</ul>
 				<a href="login.html" class="logout-button"><em class="fa fa-power-off"></em> Signout</a>
