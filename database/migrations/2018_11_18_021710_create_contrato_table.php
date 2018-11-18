@@ -17,12 +17,12 @@ class CreateContratoTable extends Migration
             $table->increments('id');
             $table->date('fecha');
             $table->float('monto_inscripcion',10,2);
-            $table->string('cedula_cliente');
+            $table->unsignedinteger('id_cliente');
             $table->timestamps();
 
 
-            $table->foreign('cedula_cliente')
-            ->references('cedula')->on('cliente')
+            $table->foreign('id_cliente')
+            ->references('id')->on('cliente')
             ->onDelete('cascade');
         });
     }

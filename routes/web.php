@@ -15,6 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('clientes', 'ClientesController');
-Route::resource('contratos', 'ContratosController');
-Route::resource('facturas', 'FacturasController');
+
+Route::resource('cliente', 'ClienteController');
+Route::get('cliente/crear-contrato/{id}', function ($id) {
+    //
+    $id_cliente = $id;
+    return Redirect::action('ContratoController@create', compact('id_cliente'));
+})->where('id', '[0-9]+');
+
+Route::resource('factura', 'FacturaController');
+Route::resource('contrato', 'ContratoController');

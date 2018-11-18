@@ -10,7 +10,7 @@
                                 <h4 class="mb-0">Nuevo usuario</h4>
                             </div>
                             <div class="card-body">
-                                <form class="form" role="form" autocomplete="off" action="/clientes" method="POST">
+                                <form class="form" role="form" autocomplete="off" action="/cliente" method="POST">
                                     @csrf
                                     <div class="form-group row">
                                         <label class="col-lg-3 col-form-label form-control-label">Nombre</label>
@@ -22,6 +22,12 @@
                                         <label class="col-lg-3 col-form-label form-control-label">Apellido</label>
                                         <div class="col-lg-9">
                                             <input class="form-control" type="text" value="Bishop" name="apellido">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label form-control-label">Telefono</label>
+                                        <div class="col-lg-9">
+                                            <input class="form-control" type="text" value="Bishop" name="telefono">
                                         </div>
                                     </div>
                                     <div class="form-group row">

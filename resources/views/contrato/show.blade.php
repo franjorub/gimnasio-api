@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Informacion</h5>
                 <p class="card-text">Creado el: {{$contrato->created_at->format('d M Y - H:i:s')}}</p>
-                <form action="/contratos/{{$contrato->id}}" method="POST">
+                <form action="/contrato/{{$contrato->id}}" method="POST">
                     @csrf
                     {{method_field('DELETE')}}
                     <input class="btn btn-primary" type="submit" value="Eliminar"/>

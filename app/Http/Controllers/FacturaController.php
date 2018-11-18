@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Clientes;
-class ClientesController extends Controller
+use App\Factura;
+class FacturaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class ClientesController extends Controller
     public function index()
     {
         //
-        $clientes = cliente::all();
-        return view('clientes.index', [
-            'clientes' => $clientes
+        $factura = Factura::all();
+        return view('factura.index', [
+            'facturas' => $factura
         ]);
     }
 
@@ -28,7 +28,7 @@ class ClientesController extends Controller
     public function create()
     {
         //
-        return view('clientes.create');
+        return view('factura.create');
     }
 
     /**
@@ -40,9 +40,8 @@ class ClientesController extends Controller
     public function store(Request $request)
     {
         //
-        Cliente::create($request->all());
-        return redirect()->route('clientes.index');
-
+        Factura::create($request->all());
+        return redirect()->route('factura.index');
     }
 
     /**
@@ -54,10 +53,6 @@ class ClientesController extends Controller
     public function show($id)
     {
         //
-        $cliente = Cliente::find($id);
-        return view('clientes.show', [
-            'cliente' => $cliente
-        ]);
     }
 
     /**
@@ -69,10 +64,6 @@ class ClientesController extends Controller
     public function edit($id)
     {
         //
-        $cliente = Cliente::find($id);
-        return view('clientes.edit', [
-            'cliente' => $cliente
-        ]);
     }
 
     /**
@@ -85,8 +76,6 @@ class ClientesController extends Controller
     public function update(Request $request, $id)
     {
         //
-        Cliente::find($id)->update($request->all());
-        return redirect()->route('clientes.index');
     }
 
     /**
@@ -98,7 +87,5 @@ class ClientesController extends Controller
     public function destroy($id)
     {
         //
-        Cliente::find($id)->delete();
-        return redirect()->route('clientes.index');
     }
 }

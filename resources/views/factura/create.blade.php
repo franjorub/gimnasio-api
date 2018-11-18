@@ -7,10 +7,10 @@
                         <!-- form user info -->
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="mb-0">Nuevo Contrato</h4>
+                                <h4 class="mb-0">Nueva Factura</h4>
                             </div>
                             <div class="card-body">
-                                <form class="form" role="form" autocomplete="off" action="/facturas" method="POST">
+                                <form class="form" role="form" autocomplete="off" action="/factura" method="POST">
                                     @csrf
                                     <div class="form-group row">
                                         <label class="col-lg-3 col-form-label form-control-label">Fecha</label>

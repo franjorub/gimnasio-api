@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Facturas;
-class FacturasController extends Controller
+use App\Contrato;
+use Illuminate\Support\Facades\DB;
+class ContratoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,11 @@ class FacturasController extends Controller
     public function index()
     {
         //
-        $facturas = Facturas::all();
-        return view('facturas.index', [
-            'facturas' => $facturas
+        $contratos = DB::select('SELECT contrato.id, cliente.nombre, cliente.apellido, contrato.fecha,
+        contrato.monto_inscripcion FROM contrato JOIN cliente ON (contrato.id_cliente=cliente.id)');
+        
+        return view('contrato.index', [
+            'contratos' => $contratos
         ]);
     }
 
@@ -25,10 +28,14 @@ class FacturasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         //
-        return view('facturas.create');
+        //dd($request);
+        $id_cliente = $request->id_cliente;
+        return view('contrato.create', [
+            'id_cliente' => $id_cliente
+        ]);
     }
 
     /**
@@ -40,9 +47,8 @@ class FacturasController extends Controller
     public function store(Request $request)
     {
         //
-        Facturas::create($request->all());
-        return redirect()->route('facturas.index');
-
+        Contrato::create($request->all());
+        return redirect()->route('contrato.index');
     }
 
     /**
@@ -54,9 +60,10 @@ class FacturasController extends Controller
     public function show($id)
     {
         //
-        $factura = Facturas::find($id);
-        return view('facturas.show', [
-            'factura' => $factura
+        $contrato = Contrato::find($id);
+        
+        return view('contrato.show', [
+            'contrato' => $contrato,           
         ]);
     }
 
@@ -69,9 +76,9 @@ class FacturasController extends Controller
     public function edit($id)
     {
         //
-        $factura = Facturas::find($id);
-        return view('facturas.edit', [
-            'factura' => $factura
+        $contrato = Contrato::find($id);
+        return view('contrato.edit', [
+            'contrato' => $contrato
         ]);
     }
 
@@ -85,8 +92,8 @@ class FacturasController extends Controller
     public function update(Request $request, $id)
     {
         //
-        Facturas::find($id)->update($request->all());
-        return redirect()->route('facturas.index');
+        Contrato::find($id)->update($request->all());
+        return redirect()->route('contrato.index');
     }
 
     /**
@@ -98,7 +105,7 @@ class FacturasController extends Controller
     public function destroy($id)
     {
         //
-        Facturas::find($id)->delete();
-        return redirect()->route('facturas.index');
+        Contrato::find($id)->delete();
+        return redirect()->route('contrato.index');
     }
 }

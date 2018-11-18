@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Contratos;
-class ContratosController extends Controller
+use App\Cliente;
+use App\Contrato;
+class ClienteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,10 @@ class ContratosController extends Controller
     public function index()
     {
         //
-        $contratos = Contratos::all();
-        return view('contratos.index', [
-            'contratos' => $contratos
+        $cliente = Cliente::all();
+        
+        return view('cliente.index', [
+            'clientes' => $cliente
         ]);
     }
 
@@ -28,7 +30,7 @@ class ContratosController extends Controller
     public function create()
     {
         //
-        return view('contratos.create');
+        return view('cliente.create');
     }
 
     /**
@@ -40,9 +42,8 @@ class ContratosController extends Controller
     public function store(Request $request)
     {
         //
-        Contratos::create($request->all());
-        return redirect()->route('contratos.index');
-
+        Cliente::create($request->all());
+        return redirect()->route('cliente.index');
     }
 
     /**
@@ -54,9 +55,10 @@ class ContratosController extends Controller
     public function show($id)
     {
         //
-        $contrato = Contratos::find($id);
-        return view('contratos.show', [
-            'contrato' => $contrato
+        $cliente = Cliente::find($id);
+       
+        return view('cliente.show', [
+            'cliente' => $cliente,            
         ]);
     }
 
@@ -69,9 +71,9 @@ class ContratosController extends Controller
     public function edit($id)
     {
         //
-        $contrato = Contratos::find($id);
-        return view('contratos.edit', [
-            'contrato' => $contrato
+        $cliente = Cliente::find($id);
+        return view('cliente.edit', [
+            'cliente' => $cliente
         ]);
     }
 
@@ -85,8 +87,8 @@ class ContratosController extends Controller
     public function update(Request $request, $id)
     {
         //
-        Contratos::find($id)->update($request->all());
-        return redirect()->route('contratos.index');
+        Cliente::find($id)->update($request->all());
+        return redirect()->route('cliente.index');
     }
 
     /**
@@ -98,7 +100,7 @@ class ContratosController extends Controller
     public function destroy($id)
     {
         //
-        Contratos::find($id)->delete();
-        return redirect()->route('contratos.index');
+        Cliente::find($id)->delete();
+        return redirect()->route('cliente.index');
     }
 }

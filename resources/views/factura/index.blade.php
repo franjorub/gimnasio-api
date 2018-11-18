@@ -18,8 +18,8 @@
                         <tr>
                             <th scope="row">{{$factura->id}}</th>
                             <td>{{$factura->fecha}}</td>                                                     
-                            <td><a href="/facturas/{{$factura->id}}/edit"><i class="fas fa-user-edit"></i></a></td>
-                            <td><a href="/facturas/{{$factura->id}}"><i class="fas fa-eye"></i></a></td>
+                            <td><a href="/factura/{{$factura->id}}/edit"><i class="fas fa-user-edit"></i></a></td>
+                            <td><a href="/factura/{{$factura->id}}"><i class="fas fa-eye"></i></a></td>
                         </tr>
                    @empty
                        <tr>
@@ -36,7 +36,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <a href="/facturas/create"><i class="fas fa-plus-square"></i> Crear factura</a>
+            <a href="/factura/create"><i class="fas fa-plus-square"></i> Crear factura</a>
         </div>
         
     </div>

@@ -10,7 +10,7 @@
                                 <h4 class="mb-0">Nuevo Contrato</h4>
                             </div>
                             <div class="card-body">
-                                <form class="form" role="form" autocomplete="off" action="/contratos" method="POST">
+                                <form class="form" role="form" autocomplete="off" action="/contrato" method="POST">
                                     @csrf
                                     <div class="form-group row">
                                         <label class="col-lg-3 col-form-label form-control-label">Fecha</label>
@@ -22,6 +22,12 @@
                                         <label class="col-lg-3 col-form-label form-control-label">Monto Inscipcion</label>
                                         <div class="col-lg-9">
                                             <input class="form-control" type="number" value="" name="monto_inscripcion">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label form-control-label">Id del cliente</label>
+                                        <div class="col-lg-9">
+                                        <input class="form-control" type="number" value="{{$id_cliente}}" name="id_cliente">
                                         </div>
                                     </div>
                                    

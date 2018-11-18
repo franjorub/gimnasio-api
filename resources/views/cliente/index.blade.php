@@ -11,7 +11,7 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellido</th>
                     <th scope="col">Cedula</th>
-                    <th colspan="2">Opciones</th>
+                    <th colspan="3">Opciones</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -21,8 +21,9 @@
                             <td>{{$cliente->nombre}}</td>
                             <td>{{$cliente->apellido}}</td>
                             <td>{{$cliente->cedula}}</td>
-                            <td><a href="/clientes/{{$cliente->id}}/edit"><i class="fas fa-user-edit"></i></a></td>
-                            <td><a href="/clientes/{{$cliente->id}}"><i class="fas fa-eye"></i></a></td>
+                            <td><a href="/cliente/{{$cliente->id}}/edit"><i class="fas fa-user-edit"></i></a></td>
+                            <td><a href="/cliente/{{$cliente->id}}"><i class="fas fa-eye"></i></a></td>
+                            <td><a href="/cliente/crear-contrato/{{$cliente->id}}"><i class="fas fa-plus-square"></i> Crear contrato</a></td>
                         </tr>
                    @empty
                        <tr>
@@ -39,7 +40,9 @@
     </div>
     <div class="row">
         <div class="col">
-            <a href="/clientes/create"><i class="fas fa-plus-square"></i> Crear cliente</a>
+            <a href="/cliente/create"><i class="fas fa-plus-square"></i> Crear cliente</a>
+            
+        
         </div>
         
     </div>

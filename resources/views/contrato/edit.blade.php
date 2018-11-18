@@ -10,7 +10,7 @@
                             <h4 class="mb-0">Actualice los campos</h4>
                         </div>
                         <div class="card-body">
-                        <form class="form" role="form" autocomplete="off" action="/contratos/{{$contrato->id}}" method="POST">
+                        <form class="form" role="form" autocomplete="off" action="/contrato/{{$contrato->id}}" method="POST">
                                 @csrf
                                 @method('PUT')
                                 <div class="form-group row">
@@ -28,7 +28,7 @@
                                 <div class="form-group row">
                                     
                                     <div class="col-lg">                                            
-                                        <input type="submit" class="btn btn-primary btn-block" value="Crear">
+                                        <input type="submit" class="btn btn-primary btn-block" value="Actualizar">
                                     </div>
                                 </div>
                             </form>

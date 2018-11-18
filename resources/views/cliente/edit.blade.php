@@ -10,7 +10,7 @@
                             <h4 class="mb-0">Actualice los campos</h4>
                         </div>
                         <div class="card-body">
-                        <form class="form" role="form" autocomplete="off" action="/clientes/{{$cliente->id}}" method="POST">
+                        <form class="form" role="form" autocomplete="off" action="/cliente/{{$cliente->id}}" method="POST">
                                 @csrf
                                 @method('PUT')
                                 <div class="form-group row">
@@ -23,6 +23,12 @@
                                     <label class="col-lg-3 col-form-label form-control-label">Apellido</label>
                                     <div class="col-lg-9">
                                     <input class="form-control" type="text" value="{{$cliente->apellido}}" name="apellido">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Telefono</label>
+                                    <div class="col-lg-9">
+                                    <input class="form-control" type="text" value="{{$cliente->telefono}}" name="telefono">
                                     </div>
                                 </div>
                                 <div class="form-group row">

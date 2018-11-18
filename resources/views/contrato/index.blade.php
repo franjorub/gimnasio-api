@@ -10,6 +10,8 @@
                     <th scope="col">#</th>
                     <th scope="col">Fecha</th>
                     <th scope="col">Monto Inscripcion</th>                    
+                    <th scope="col">Cliente</th>                 
+                                        
                     <th colspan="2">Opciones</th>
                   </tr>
                 </thead>
@@ -19,8 +21,10 @@
                             <th scope="row">{{$contrato->id}}</th>
                             <td>{{$contrato->fecha}}</td>
                             <td>{{$contrato->monto_inscripcion}}</td>                            
-                            <td><a href="/contratos/{{$contrato->id}}/edit"><i class="fas fa-user-edit"></i></a></td>
-                            <td><a href="/contratos/{{$contrato->id}}"><i class="fas fa-eye"></i></a></td>
+                            <td>{{$contrato->nombre}} {{$contrato->apellido}}</td>                            
+                                                 
+                            <td><a href="/contrato/{{$contrato->id}}/edit"><i class="fas fa-user-edit"></i></a></td>
+                            <td><a href="/contrato/{{$contrato->id}}"><i class="fas fa-eye"></i></a></td>
                         </tr>
                    @empty
                        <tr>
@@ -35,10 +39,5 @@
               </table>              
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <a href="/contratos/create"><i class="fas fa-plus-square"></i> Crear contrato</a>
-        </div>
-        
-    </div>
+    
 @endsection
