@@ -17,7 +17,7 @@ class CreatePagoTable extends Migration
             $table->increments('id');
             $table->date('fecha');
             $table->float('monto',10,2);
-            $table->string('descripcion')->nullable();
+            $table->longtext('descripcion')->nullable();
             $table->unsignedinteger('id_factura');
             $table->timestamps();
 
