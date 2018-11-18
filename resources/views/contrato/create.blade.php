@@ -1,6 +1,8 @@
 @extends('layouts.layout')
 @section('title', 'Crear cliente')
 @section('content')
+<div class="container">
+
     <h1>Crear cliente</h1>
     <div class="row">
             <div class="mx-auto col-sm-6">
@@ -51,4 +53,5 @@
                         <!-- /form user info -->
             </div>
         </div>
+</div>
 @endsection

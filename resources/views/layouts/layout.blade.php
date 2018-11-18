@@ -9,13 +9,13 @@
     
   
       <!-- Bootstrap core CSS -->
-      <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+      <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
       
       <!-- Icons -->
-      <link href="css/font-awesome.css" rel="stylesheet">
+      <link href="/css/font-awesome.css" rel="stylesheet">
       
       <!-- Custom styles for this template -->
-      <link href="css/style.css" rel="stylesheet">
+      <link href="/css/style.css" rel="stylesheet">
       
     <title>@yield('title')</title>
   </head>
