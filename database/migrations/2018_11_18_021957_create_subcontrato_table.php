@@ -18,12 +18,25 @@ class CreateSubcontratoTable extends Migration
             $table->date('fecha_inicio');
             $table->date('fecha_termino')->nullable();
             $table->unsignedinteger('id_contrato');
+            $table->unsignedinteger('id_plan')->nullable();
+            $table->unsignedinteger('id_servicio')->nullable();
             $table->timestamps();
 
             $table->foreign('id_contrato')
             ->references('id')->on('contrato')
             ->onDelete('cascade');
+
+            $table->foreign('id_plan')
+            ->references('id')->on('plan')
+            ->onDelete('cascade');
+
+            $table->foreign('id_servicio')
+            ->references('id')->on('servicio')
+            ->onDelete('cascade');
+
         });
+
+        DB::statement('ALTER TABLE SUBCONTRATO ADD CONSTRAINT ARC_SUB CHECK (((id_plan is NULL) AND (id_servicio IS NOT NULL)) OR ((id_plan IS NOT NULL) AND (id_servicio IS NULL)))');
     }
 
     /**

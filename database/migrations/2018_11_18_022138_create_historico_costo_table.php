@@ -29,6 +29,8 @@ class CreateHistoricoCostoTable extends Migration
             ->references('id')->on('servicio')
             ->onDelete('cascade');
         });
+
+        DB::statement('ALTER TABLE historico_costo ADD CONSTRAINT ARC_SUB CHECK (((id_plan is NULL) AND (id_servicio IS NOT NULL)) OR ((id_plan IS NOT NULL) AND (id_servicio IS NULL)))');
     }
 
     /**
