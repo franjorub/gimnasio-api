@@ -17,7 +17,7 @@ class CreateContratoTable extends Migration
             $table->increments('id');
             $table->date('fecha');
             $table->float('monto_inscripcion',10,2);
-            $table->string('id_cliente');
+            $table->unsignedinteger('id_cliente');
             $table->timestamps();
 
 
