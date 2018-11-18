@@ -18,11 +18,15 @@ class CreateContratoTable extends Migration
             $table->date('fecha');
             $table->float('monto_inscripcion',10,2);
             $table->unsignedinteger('id_cliente');
+            $table->unsignedinteger('id_plan');
             $table->timestamps();
 
 
             $table->foreign('id_cliente')
             ->references('id')->on('cliente')
+            ->onDelete('cascade');
+            $table->foreign('id_plan')
+            ->references('id')->on('plan')
             ->onDelete('cascade');
         });
     }
