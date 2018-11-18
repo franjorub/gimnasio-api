@@ -21,9 +21,9 @@
                             <td>{{$cliente->nombre}}</td>
                             <td>{{$cliente->apellido}}</td>
                             <td>{{$cliente->cedula}}</td>
-                            <td><a href="/cliente/{{$cliente->id}}/edit"><i class="fas fa-user-edit">Editar</i></a></td>
-                            <td><a href="/cliente/{{$cliente->id}}"><i class="fas fa-eye">Ver</i></a></td>
-                            <td><a href="/cliente/crear-contrato/{{$cliente->id}}"><i class="fas fa-file-signature"></i> Crear contrato</a></td>
+                            <td><a href="/cliente/{{$cliente->id}}/edit"><i class="fa fa-pencil">Editar</i></a></td>
+                            <td><a href="/cliente/{{$cliente->id}}"><i class="fa fa-eye">Ver</i></a></td>
+                            <td><a href="/cliente/crear-contrato/{{$cliente->id}}"><i class="fa fa-file"></i> Crear contrato</a></td>
                         </tr>
                    @empty
                        <tr>
@@ -40,7 +40,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <a href="/cliente/create"><i class="fas fa-plus-square"></i> Crear cliente</a>
+            <a href="/cliente/create"><i class="fa fa-plus-circle"></i> Crear cliente</a>
             
         
         </div>
