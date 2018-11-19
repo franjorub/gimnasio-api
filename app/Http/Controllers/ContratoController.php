@@ -16,10 +16,13 @@ class ContratoController extends Controller
     public function index()
     {
         //
-        $contratos = DB::select('SELECT contrato.id, cliente.nombre, cliente.apellido, contrato.fecha,
-        contrato.monto_inscripcion FROM contrato JOIN cliente ON (contrato.id_cliente=cliente.id)');
+        // $contratos = DB::select('SELECT contrato.id, cliente.nombre, cliente.apellido, contrato.fecha,
+        // contrato.monto_inscripcion FROM contrato JOIN cliente ON (contrato.id_cliente=cliente.id)');
+        $contratos = DB::select('SELECT contrato.id, cliente.nombre, cliente.apellido, cliente.id as "cliente_id",contrato.fecha,
+        contrato.monto_inscripcion, plan.id as "plan_id", plan.nombre as "plan"
+FROM contrato JOIN cliente ON (contrato.id_cliente=cliente.id) JOIN plan ON (contrato.id_plan = plan.id)');
         
-        
+        //dd($contratos);
         return view('contrato.index', [
             'contratos' => $contratos
         ]);
@@ -81,8 +84,10 @@ class ContratoController extends Controller
     {
         //
         $contrato = Contrato::find($id);
+        $planes = Plan::all();
         return view('contrato.edit', [
-            'contrato' => $contrato
+            'contrato' => $contrato,
+            'planes' => $planes
         ]);
     }
 

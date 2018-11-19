@@ -39,7 +39,7 @@
                                                 <option value="{{$plan->id}}">{{$plan->nombre}}</option>
                                               @endforeach
                                             </select>
-                                          </div>
+                                    </div>
                                    
                                     <div class="form-group row">
                                         

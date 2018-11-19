@@ -29,6 +29,7 @@ class PlanController extends Controller
     public function create()
     {
         //
+        return view('plan.create');
     }
 
     /**
@@ -40,6 +41,8 @@ class PlanController extends Controller
     public function store(Request $request)
     {
         //
+        Plan::create($request->all());
+        return redirect()->route('plan.index');
     }
 
     /**
@@ -51,6 +54,11 @@ class PlanController extends Controller
     public function show($id)
     {
         //
+        $plan = Plan::find($id);
+        
+        return view('plan.show', [
+            'plan' => $plan,           
+        ]);
     }
 
     /**
@@ -85,5 +93,7 @@ class PlanController extends Controller
     public function destroy($id)
     {
         //
+        Plan::find($id)->delete();
+        return redirect()->route('plan.index');
     }
 }

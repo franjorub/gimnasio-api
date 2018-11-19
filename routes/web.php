@@ -11,10 +11,13 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('welcome');
 });
 
+Route::get('/', function() {
+    return view('login');
+});
 
 Route::resource('cliente', 'ClienteController');
 Route::get('cliente/crear-contrato/{id}', function ($id) {

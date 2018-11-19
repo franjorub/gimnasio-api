@@ -1,21 +1,29 @@
 @extends('layouts.layout')
 @section('title', 'Informacion de cliente')
 @section('content')
-    <div class="row">
-        <div class="col">
-            <div class="card">
-            <h5 class="card-header">Cliente numero: {{$cliente->id}}</h5>
-                <div class="card-body">
-                    <h5 class="card-title">{{$cliente->nombre}} {{$cliente->apellido}}</h5>
-                <p class="card-text">Creado el: {{$cliente->created_at->format('d M Y - H:i:s')}}</p>
-                <form action="/cliente/{{$cliente->id}}" method="POST">
-                    @csrf
-                    {{method_field('DELETE')}}
-                    <input class="btn btn-primary" type="submit" value="Eliminar"/>
-                </form>
-                </div>
-            </div>
-        </div>
+<div class="row">
+       
+    <div class="col">
+        
+        <img class="img-fluid" src="/images/memb1.jpg" alt="Card image cap">
+            
+        
     </div>
+    
+    <div class="col">
+    
+        <h5>{{ $plan->nombre}}</h5>
+        <p>{{ $plan->descripcion}}</p>
+        <p><small class="text-muted">Last updated 3 mins ago</small></p>
+        <form action="/plan/{{$plan->id}}" method="POST" id="deleteForm">
+            @csrf
+            {{method_field('DELETE')}}
+            <input class="btn btn-danger" value="Eliminar" type="submit"/>
+        </form>
+    
+    </div>
+</div>
+
+            
     
 @endsection

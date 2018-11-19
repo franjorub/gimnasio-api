@@ -16,15 +16,23 @@
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Fecha</label>
                                     <div class="col-lg-9">
-                                    <input class="form-control" type="date" value="{{$contrato->fecha}}" name="fecha">
+                                        <input class="form-control" type="date" value="{{$contrato->fecha}}" name="fecha">
                                     </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label form-control-label">Monto Inscipcion</label>
-                                        <div class="col-lg-9">
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Monto Inscipcion</label>
+                                    <div class="col-lg-9">
                                         <input class="form-control" type="number" value="{{$contrato->monto_inscripcion}}" name="monto_inscripcion">
-                                        </div>
                                     </div>
+                                </div>
+                                <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Plan de entrenamiento</label>
+                                        <select class="form-control" id="exampleFormControlSelect1" name="id_plan">                                            
+                                          @foreach ($planes as $plan)
+                                            <option value="{{$plan->id}}">{{$plan->nombre}}</option>
+                                          @endforeach
+                                        </select>
+                                </div>
                                 <div class="form-group row">
                                     
                                     <div class="col-lg">                                            

@@ -18,8 +18,29 @@
       <link href="/css/style.css" rel="stylesheet">
       
     <title>@yield('title')</title>
+
+    @if (request()->is('/'))
+        <style>
+          body{
+            background: #171819;
+          }
+        </style>
+    @endif
   </head>
   <body>
+    @if (!(request()->is('/') || request()->is('home')))
+      <div class="container-fluid pb-4 mb-4">
+        <div class="row bg-dark text-danger">
+          <div class="col">
+            <div class="container">
+              <a href="/home" class="h3">Komplex GYM</a> 
+  
+            </div>
+          </div>        
+        </div>
+      </div>
+    @endif
+    
 
     <div class="container">
         @yield('content')
