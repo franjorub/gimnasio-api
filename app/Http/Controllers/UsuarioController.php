@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 use App\User;
 
 class UsuarioController extends Controller
@@ -16,7 +17,9 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
+        if(Auth::check()){
+            return redirect()->intended('dashboard');
+        }
         return view('usuario.index');
     }
 
@@ -59,7 +62,7 @@ class UsuarioController extends Controller
                     'id_rol' => $data['rol']
                 ]);
 
-                return 'Usuario registrado';
+                return redirect('/usuario/nuevo');
             }
 
 
@@ -126,6 +129,14 @@ class UsuarioController extends Controller
         if (Auth::attempt($credentials)) {
             // Authentication passed...
             return redirect()->intended('dashboard');
+        }else{
+            return redirect('login');
         }
     }
+
+    public function logout(){
+        Auth::logout();
+        return redirect('login');
+    }
+
 }
