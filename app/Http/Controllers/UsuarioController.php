@@ -35,7 +35,7 @@ class UsuarioController extends Controller
             return view('usuario.create');
         };
         
-        return redirect('/');
+        return redirect('/'); // si no es admin lo redirecciona a home
     }
 
     /**
@@ -50,12 +50,12 @@ class UsuarioController extends Controller
 
         if (User::where('email', '=', $data['email'])->exists()) {
             // user found
-            return 'El correo ya está resitrado en la base de datos';
+            return redirect('/usuario/nuevo'); //correo existe
         }else{
 
             if(strcmp($data['password'],$data['password_confirm'])  != 0){
 
-                return 'Las contraseñas no son iguales';
+                return redirect('/usuario/nuevo'); //contraseñas iguales
 
             }else{
                 User::create([
@@ -135,9 +135,10 @@ class UsuarioController extends Controller
             $user = Auth::user();
             return redirect()->intended('dashboard');
         }else{
-            return redirect('login');
+            return view('usuario.index'); //email o contraseña incorrectos
         }
     }
+
 
     public function logout(){
         Auth::logout();
