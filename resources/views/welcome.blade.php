@@ -14,7 +14,7 @@
 					<li class="nav-item"><a class="nav-link" href="/servicio"><em class="fa fa-file-text"></em> Servicios</a></li>
 					
 				</ul>
-				<a href="/" class="logout-button"><em class="fa fa-power-off"></em> Cerrar Sesion</a>
+				<a href="/authenticate/logout" class="logout-button"><em class="fa fa-power-off"></em> Cerrar Sesion</a>
 			</nav>
 			<main class="col-xs-12 col-sm-8 col-lg-9 col-xl-10 pt-3 pl-4 ml-auto">
 				<header class="page-header row justify-center">

@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,20 +13,28 @@
 
 Route::get('/home', function () {
     return view('welcome');
-});
+})->middleware('auth');
 
 Route::get('/', function() {
     return view('login');
+})->name('login');
+
+Route::get('/register', function(){
+    return view('register');
 });
 
-Route::resource('cliente', 'ClienteController');
+Route::post('/authenticate', 'AuthenticateController@check');
+Route::get('/authenticate/logout', 'AuthenticateController@logout');
+
+Route::resource('usuario', 'UsuarioController')->middleware('auth');
+Route::resource('cliente', 'ClienteController')->middleware('auth');
 Route::get('cliente/crear-contrato/{id}', function ($id) {
     //
     $id_cliente = $id;
     return Redirect::action('ContratoController@create', compact('id_cliente'));
-})->where('id', '[0-9]+');
+})->where('id', '[0-9]+')->middleware('auth');
 
-Route::resource('factura', 'FacturaController');
-Route::resource('contrato', 'ContratoController');
-Route::resource('plan', 'PlanController');
-Route::resource('servicio', 'ServicioController');
+Route::resource('factura', 'FacturaController')->middleware('auth');
+Route::resource('contrato', 'ContratoController')->middleware('auth');
+Route::resource('plan', 'PlanController')->middleware('auth');
+Route::resource('servicio', 'ServicioController')->middleware('auth');
