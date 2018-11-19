@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::resource('clientes', 'ClientesController');
 Route::resource('contratos', 'ContratosController');
 Route::resource('facturas', 'FacturasController');
+Route::get('/usuario/nuevo', 'UsuarioController@create');
+Route::post('/usuario/crear', 'UsuarioController@store');
