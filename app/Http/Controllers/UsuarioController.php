@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-use App\Usuario;
+use App\User;
 
 class UsuarioController extends Controller
 {
@@ -16,6 +17,7 @@ class UsuarioController extends Controller
     public function index()
     {
         //
+        return view('usuario.index');
     }
 
     /**
@@ -39,7 +41,7 @@ class UsuarioController extends Controller
     {
         $data = request()->all();
 
-        if (Usuario::where('email', '=', $data['email'])->exists()) {
+        if (User::where('email', '=', $data['email'])->exists()) {
             // user found
             return 'El correo ya está resitrado en la base de datos';
         }else{
@@ -49,14 +51,14 @@ class UsuarioController extends Controller
                 return 'Las contraseñas no son iguales';
 
             }else{
-                Usuario::create([
+                User::create([
                     'email' => $data['email'],
                     'password' => bcrypt($data['password']),
                     'nombre'=> $data['nombre'],
                     'apellido' => $data['apellido'],
                     'id_rol' => $data['rol']
                 ]);
-                
+
                 return 'Usuario registrado';
             }
 
@@ -107,5 +109,23 @@ class UsuarioController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+        /**
+     * Handle an authentication attempt.
+     *
+     * @param  \Illuminate\Http\Request $request
+     *
+     * @return Response
+     */
+    public function authenticate(Request $request)
+    {
+        $table = 'usuario';
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            // Authentication passed...
+            return redirect()->intended('dashboard');
+        }
     }
 }
