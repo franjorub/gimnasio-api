@@ -26,7 +26,7 @@ Route::get('/register', function(){
 Route::post('/authenticate', 'AuthenticateController@check');
 Route::get('/authenticate/logout', 'AuthenticateController@logout');
 
-Route::resource('usuario', 'UsuarioController')->middleware('auth');
+Route::resource('usuario', 'UsuarioController');
 Route::resource('cliente', 'ClienteController')->middleware('auth');
 Route::get('cliente/crear-contrato/{id}', function ($id) {
     //
