@@ -17,6 +17,8 @@
                         <h5 class="card-title">{{ $plan->nombre}}</h5>
                         <p class="card-text">{{ $plan->descripcion}}</p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <a href="/plan/{{$plan->id}}" class="btn btn-dark m-1">Ver</a>
+                        <a href="/plan/{{$plan->id}}/edit" class="btn btn-primary m-1">Editar</a>
                         <form action="/plan/{{$plan->id}}" method="POST" id="deleteForm">
                             @csrf
                             {{method_field('DELETE')}}
