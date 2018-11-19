@@ -14,7 +14,7 @@
 					<li class="nav-item"><a class="nav-link" href="/servicio"><em class="fa fa-file-text"></em> Servicios</a></li>
 					
 				</ul>
-				<a href="login.html" class="logout-button"><em class="fa fa-power-off"></em> Signout</a>
+				<a href="/" class="logout-button"><em class="fa fa-power-off"></em> Cerrar Sesion</a>
 			</nav>
 			<main class="col-xs-12 col-sm-8 col-lg-9 col-xl-10 pt-3 pl-4 ml-auto">
 				<header class="page-header row justify-center">
@@ -39,14 +39,14 @@
 						<section class="row">
 							<div class="col-md-12 col-lg-8">
 								<div class="jumbotron">
-									<h1 class="mb-4">Hello, world!</h1>
-									<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-									<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-									<p class="lead"><a class="btn btn-primary btn-lg mt-2" href="#" role="button">Learn more</a></p>
+									<h1 class="mb-4">Bienvenido!</h1>
+									<p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consectetur aliquid saepe blanditiis esse voluptatem repellat perspiciatis et earum, repellendus eius itaque aspernatur dignissimos eveniet veritatis explicabo velit sed a.</p>
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolorem corporis esse doloremque consequatur illo animi excepturi odit pariatur doloribus ad similique, commodi temporibus et natus? Veniam consequuntur perferendis officiis.</p>
+									<p class="lead"><a class="btn btn-primary btn-lg mt-2" href="#" role="button">Ir Algun sitio</a></p>
 								</div>
 								<div class="card mb-4">
 									<div class="card-block">
-										<h3 class="card-title">Overview</h3>
+										<h3 class="card-title">Aqui pueden ir reportes</h3>
 										<div class="dropdown card-title-btn-container">
 											<button class="btn btn-sm btn-subtle" type="button"><em class="fa fa-list-ul"></em> View All</button>
 											<button class="btn btn-sm btn-subtle dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><em class="fa fa-cog"></em></button>
@@ -62,7 +62,7 @@
 								</div>
 								<div class="card mb-4">
 									<div class="card-block">
-										<h3 class="card-title">Recent Orders</h3>
+										<h3 class="card-title">Contratos Recientes</h3>
 										<div class="dropdown card-title-btn-container">
 											<button class="btn btn-sm btn-subtle" type="button"><em class="fa fa-list-ul"></em> View All</button>
 											<button class="btn btn-sm btn-subtle dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><em class="fa fa-cog"></em></button>
@@ -74,43 +74,43 @@
 											<table class="table table-striped">
 												<thead>
 													<tr>
-														<th>Order #</th>
-														<th>Product</th>
-														<th>Customer</th>
-														<th>Status</th>
+														<th>#</th>
+														<th>Cliente</th>
+														<th>plan</th>
+														<th>Monto</th>
 													</tr>
 												</thead>
 												<tbody>
 													<tr>
-														<td>0001</td>
-														<td>Product Name 1</td>
-														<td>Customer 1</td>
-														<td>Complete</td>
+														<td>1</td>
+														<td>Cliente 1</td>
+														<td>Plan 1</td>
+														<td>1102931</td>
 													</tr>
 													<tr>
-														<td>0002</td>
-														<td>Product Name 2</td>
-														<td>Customer 2</td>
-														<td>Complete</td>
+														<td>2</td>
+														<td>Cliente 2</td>
+														<td>Plan 2</td>
+														<td>1102931</td>
 													</tr>
 													<tr>
-														<td>0003</td>
-														<td>Product Name 3</td>
-														<td>Customer 3</td>
-														<td>Processing</td>
+														<td>3</td>
+														<td>Cliente 3</td>
+														<td>Plan 3</td>
+														<td>123213</td>
 													</tr>
 													<tr>
-														<td>0004</td>
-														<td>Product Name 4</td>
-														<td>Customer 4</td>
-														<td>Pending</td>
+														<td>4</td>
+														<td>Cliente 4</td>
+														<td>Plan 4</td>
+														<td>2123123</td>
 													</tr>
 												</tbody>
 											</table>
 										</div>
 									</div>
 								</div>
-								<div class="card mb-4">
+								{{-- <div class="card mb-4">
 									<div class="card-block">
 										<h3 class="card-title">Articles</h3>
 										<div class="dropdown card-title-btn-container">
@@ -315,10 +315,10 @@
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> --}}
 						</section>
 						<section class="row">
-							<div class="col-12 mt-1 mb-4">Template by <a href="https://www.medialoot.com">Medialoot</a></div>
+							<div class="col-12 mt-1 mb-4">Creditos a la gente que hizo este template <a href="https://www.medialoot.com">Medialoot</a></div>
 						</section>
 					</div>
 				</section>
