@@ -18,7 +18,7 @@ class UsuarioController extends Controller
     public function index()
     {
         if(Auth::check()){
-            return redirect()->intended('dashboard');
+            return redirect()->intended('dashboard'); //redirecciona a la main page
         }
         return view('usuario.index');
     }
@@ -30,8 +30,12 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        //
-        return view('usuario.create');
+        $user = Auth::user();
+        if($user->id_rol == 1){
+            return view('usuario.create');
+        };
+        
+        return redirect('/');
     }
 
     /**
@@ -128,6 +132,7 @@ class UsuarioController extends Controller
 
         if (Auth::attempt($credentials)) {
             // Authentication passed...
+            $user = Auth::user();
             return redirect()->intended('dashboard');
         }else{
             return redirect('login');
